@@ -4,7 +4,8 @@
   "description": "Describr displays user profiles on the front end. Including upload and change profile photos, users can update profile fields and account settings on the front end. Additionally, administrators can grant users the capability to delete their accounts on the front end. Also, Describr gives administrators full control over what is shown on users' profiles and accounts.",
   "tested_wp": "6.0",
   "requires_php": "8.4.0",
-  "download_url": "https://raw.githubusercontent.com/describr/versions/main/3.zip"
-
+  "download_url": "https://raw.githubusercontent.com/describr/versions/main/3.zip",
+  "author": "profiletoggler",
 }
+
 

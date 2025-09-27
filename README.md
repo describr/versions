@@ -1,4 +1,4 @@
-=== Describr: User Profile on the Front End ===
+=== Describr: User Profile on the Front End ===  
 Contributors: profiletoggler  
 Donate link: https://www.paypal.com/donate/?hosted_button_id=MEB7PGVTDJG7Q  
 Tags: profiles, users profiles, users, users photos, front end  

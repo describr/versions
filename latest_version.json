@@ -4,5 +4,6 @@
   "description": "The best plugin to show user profiles on the front end.",
   "tested_wp": "6.0",
   "requires_php": "8.4.0",
-  "download_url": "https://github.com/describr/versions/3.zip"
+  "download_url": "https://raw.githubusercontent.com/describr/versions/main/3.zip"
+
 }

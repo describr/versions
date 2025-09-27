@@ -1,0 +1,8 @@
+{
+  "plugin_name": "Describr",
+  "latest_version": "3.0",
+  "description": "The best plugin to show user profiles on the front end.",
+  "tested_wp": "6.0",
+  "requires_php": "8.4.0",
+  "download_url": "https://github.com/describr/versions/3.zip"
+}

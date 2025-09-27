@@ -1,13 +1,13 @@
 === Describr: User Profile on the Front End ===
-Contributors: profiletoggler
-Donate link: https://www.paypal.com/donate/?hosted_button_id=MEB7PGVTDJG7Q
-Tags: profiles, users profiles, users, users photos, front end
-Requires at least: 6.0
-Tested up to: 6.7
-Requires PHP: 8.4.0
-Stable tag: 3.0
-License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Contributors: profiletoggler  
+Donate link: https://www.paypal.com/donate/?hosted_button_id=MEB7PGVTDJG7Q  
+Tags: profiles, users profiles, users, users photos, front end  
+Requires at least: 6.0  
+Tested up to: 6.7  
+Requires PHP: 8.4.0  
+Stable tag: 3.0  
+License: GPLv2 or later  
+License URI: https://www.gnu.org/licenses/gpl-2.0.html  
 
 The best plugin to show user profiles on the front end.
 

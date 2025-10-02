@@ -1,24 +1,23 @@
 === Describr: User Profile on the Front End ===  
 Contributors: profiletoggler  
-Donate link: https://www.paypal.com/donate/?hosted_button_id=MEB7PGVTDJG7Q  
 Tags: profiles, users profiles, users, users photos, front end  
-Requires at least: 6.0  
-Tested up to: 6.7  
-Requires PHP: 8.4.0  
+Requires at least: 4.7  
+Tested up to: 6.8  
+Requires PHP: 8.4  
 Stable tag: 3.0  
 License: GPLv2 or later  
 License URI: https://www.gnu.org/licenses/gpl-2.0.html  
 
-The best plugin to show user profiles on the front end.
+The best plugin for front-end user profiles.
 
 == Description ==
 
-Describr displays user profiles on the front end. Including upload and change profile photos, users can update profile fields and account settings on the front end. Additionally, administrators can grant users the capability to delete their accounts on the front end. Also, Describr gives administrators full control over what is shown on users' profiles and accounts.
+Describr displays user profiles on the front end. Including uploading and changing profile photos, users can update profile fields and account settings on the front end. Describr gives administrators the ability to grant users the capability to delete their accounts on the front end.
 
 Major features in Describr include:
 
 * Users can view and update their profiles on the front end.
-* Users can upload profile pictures.
+* Users can upload profile pictures on the front end.
 * Users can manage their account settings on the front end.
 * Administrator can make a user an important person.
 * Administrator can disable fields and tabs.
@@ -28,8 +27,8 @@ Major features in Describr include:
 * Administrator can make users inactive.
 * Administrator can send users a link to confirm their accounts.
 * Administrator can manage Describr from the Settings tab on the back end.
-* Administrator can grant/revoke roles capabilities.
-* Administrator can include a password field on WordPress' registration from (single site only).
+* Administrator can grant capabilities to roles and remove capabilities from roles.
+* Administrator can include a password field on WordPress' registration form (single site only).
 * Multisite support.
 * Fully translatable.
 

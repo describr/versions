@@ -5,7 +5,7 @@ Requires at least: 4.7
 Tested up to: 6.8  
 Requires PHP: 8.4  
 Stable tag: 3.0.1 
-License: GPLv2 or later   
+License: GPLv2 or later  
 License URI: https://www.gnu.org/licenses/gpl-2.0.html  
 
 The best plugin for front-end user profiles.
@@ -42,4 +42,4 @@ Upload the Describr plugin to your blog and activate it.
 
 Like This Plugin? You can show your support by:
 
-* [Rating the plugin](https://wordpress.org/support/plugin/describr/reviews/?filter=5#new-post) or [Donating to the developer](https://www.paypal.com/donate/?hosted_button_id=MEB7PGVTDJG7Q).
+* [Rating the plugin](https://wordpress.org/support/plugin/describr/reviews/?filter=5#new-post)

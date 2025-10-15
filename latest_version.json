@@ -1,6 +1,6 @@
 {
   "plugin_name": "Describr",
-  "latest_version": "3.0",
+  "latest_version": "3.0.1",
   "description": "Describr displays user profiles on the front end. Including uploading and changing profile photos, users can update profile fields and account settings on the front end. Describr gives administrators the ability to grant users the capability to delete their accounts on the front end.",
   "tested_wp": "6.8.3",
   "requires_php": "8.4",
@@ -8,6 +8,7 @@
   "last_updated": "1 October 2025",
   "author": "profiletoggler"
 }
+
 
 
 

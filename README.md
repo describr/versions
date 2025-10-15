@@ -1,6 +1,6 @@
 === Describr: User Profile on the Front End ===  
 Contributors: profiletoggler  
-Tags: profiles, users profiles, users, users photos, front end  
+Tags: user profiles, users, front end, member, registration  
 Requires at least: 4.7  
 Tested up to: 6.8  
 Requires PHP: 8.4  

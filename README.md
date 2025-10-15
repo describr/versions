@@ -4,8 +4,8 @@ Tags: profiles, users profiles, users, users photos, front end
 Requires at least: 4.7  
 Tested up to: 6.8  
 Requires PHP: 8.4  
-Stable tag: 3.0.1 
-License: GPLv2 or later  
+Stable tag: 3.0.1   
+License: GPLv2 or later   
 License URI: https://www.gnu.org/licenses/gpl-2.0.html  
 
 The best plugin for front-end user profiles.

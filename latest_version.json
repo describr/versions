@@ -1,13 +1,14 @@
 {
   "plugin_name": "Describr",
   "latest_version": "3.0.1",
-  "description": "Describr displays user profiles on the front end. Including uploading and changing profile photos, users can update profile fields and account settings on the front end. Describr gives administrators the ability to grant users the capability to delete their accounts on the front end.",
+  "description": "The best user profile and membership plugin for WordPress. Describr makes it easy to create beautiful user profiles on the front end. Describr makes it easy for users to manage their profiles and accounts on the front end. Describr is extensible and makes it easy for you to create websites where users can become members.",
   "tested_wp": "6.8.3",
   "requires_php": "8.4",
   "download_url": "https://raw.githubusercontent.com/describr/versions/main/describr.zip",
-  "last_updated": "15 October 2025",
+  "last_updated": "28 November 2025",
   "author": "profiletoggler"
 }
+
 
 
 

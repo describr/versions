@@ -1,6 +1,6 @@
-=== Describr: User Profile on the Front End ===  
+=== Describr - Membership, User Profile, Content Restriction & Role Editor Plugin ===  
 Contributors: profiletoggler  
-Tags: user profiles, users, front end, member, registration  
+Tags: user profile, users, membership, member, user registration  
 Requires at least: 4.7  
 Tested up to: 6.8  
 Requires PHP: 8.4  
@@ -8,29 +8,29 @@ Stable tag: 3.0.1
 License: GPLv2 or later   
 License URI: https://www.gnu.org/licenses/gpl-2.0.html  
 
-The best plugin for front-end user profiles.
+Membership plugin including front-end user profiles, user registration, content restriction, user account restriction, user roles, and more.
 
 == Description ==
 
-Describr displays user profiles on the front end. Including uploading and changing profile photos, users can update profile fields and account settings on the front end. Describr gives administrators the ability to grant users the capability to delete their accounts on the front end.
+Describr is the best user profile and membership plugin for WordPress. Describr makes it easy to create beautiful user profiles on the front end. Describr makes it easy for users to manage their profiles and accounts on the front end. Describr is extensible and makes it easy for you to create websites where users can become members.
 
 Major features in Describr include:
 
-* Users can view and update their profiles on the front end.
-* Users can upload profile pictures on the front end.
-* Users can manage their account settings on the front end.
-* Administrator can make a user an important person.
-* Administrator can disable fields and tabs.
-* Administrator can add multiple administrator emails.
-* Administrator can grant users the capability to delete their profiles on the front end.
-* Administrator can change users' status.
-* Administrator can make users inactive.
-* Administrator can send users a link to confirm their accounts.
-* Administrator can manage Describr from the Settings tab on the back end.
-* Administrator can grant capabilities to roles and remove capabilities from roles.
-* Administrator can include a password field on WordPress' registration form (single site only).
+* Front-end user profiles.
+* User account on the front end.
+* Content restriction.
+* User account restriction.
+* Password field can be added to WordPress registration form (single site only).
+* Password complexity.
+* Conditional profile fields.
+* Conditional nav menus.
+* Make user an important person.
+* Custom capabilities.
+* Delete user from the front end.
+* Show author posts & comments on user profiles.
+* Extensible with many filters and actions.
 * Multisite support.
-* Fully translatable.
+* Multisite support.
 
 == Installation ==
 

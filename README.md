@@ -1,10 +1,10 @@
 === Describr - Membership, User Profile, Content Restriction & Role Editor Plugin ===  
 Contributors: profiletoggler  
 Tags: community, membership, member, user-profile, user-registration  
-Requires at least: 4.7  
+Requires at least: 6.0  
 Tested up to: 6.9  
-Requires PHP: 8.4  
-Stable tag: 3.0.1   
+Requires PHP: 7.0  
+Stable tag: 3.1.2   
 License: GPLv2 or later   
 License URI: https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -16,21 +16,10 @@ Describr is the best membership and user profile plugin for WordPress. Describr 
 
 Major features in Describr include:
 
-* Front-end user profiles.
-* User account on the front end.
-* Content restriction.
-* User account restriction.
-* Password field can be added to WordPress registration form (single site only).
-* Password complexity.
-* Conditional profile fields.
-* Conditional nav menus.
-* Make user an important person.
-* Custom capabilities.
+* Add capabilities to roles.
 * Delete user from the front end.
 * Show author posts & comments on user profiles.
 * Extensible with many filters and actions.
-* Multisite support.
-* Multisite support.
 
 == Installation ==
 

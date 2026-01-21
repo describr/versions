@@ -1,4 +1,4 @@
-# Structure of Front-end User Profiles and Account Page URLs
+# URL Structure of Front-end User Profiles and Account Page
 
 20 January 2026
 

@@ -1,4 +1,8 @@
-/** Structure of the front-end user profile and account page URLs. */
+20 January 2026
+
+Uppercase text indicates placeholders that should be replaced.
+
+HOME_URL is the URL used to access the front end of your site.
 
 ### User Profile
 

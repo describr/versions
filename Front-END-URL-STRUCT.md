@@ -19,3 +19,5 @@ Uppercase text indicates placeholders that should be replaced.
 The describr_user=**USER_ID** query variable can be added to either format of the account page URLs to locate the account page for a user other than the logged-in user.
 
 The User and Account pages are created during the activation of the plugin and can be found on the Dashboard's Pages screen. 
+
+Describr is compatible with WPML.

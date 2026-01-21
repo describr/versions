@@ -1,4 +1,5 @@
 === Structure of Front-end User Profiles and Account Page URLs ===
+
 20 January 2026
 
 Uppercase text indicates placeholders that should be replaced.

@@ -1,4 +1,5 @@
 /** Structure of the front-end user profile and account page URLs. */
+
 ### User Profile
 
 Pretty URL: HOME_URL/user/USER_NICENAME

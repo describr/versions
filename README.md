@@ -14,12 +14,29 @@ The best membership plugin including front-end user profiles, user registration,
 
 Describr is the best membership and user profile plugin for WordPress. Describr makes it easy to create beautiful user profiles on the front end. Describr is extensible and makes it easy for you to create websites where users can become members. Describr gives you powerful tools to add capabilities to roles and restrict content.
 
-Major features in Describr include:
+### Major Features:
 
-* Add capabilities to roles.
-* Delete user from the front end.
-* Show author posts & comments on user profiles.
+* Front-end user profiles.
+* Front-end account page.
+* Allows you to create capabilities, grant/deny capabilities to user roles, and delete user roles.
+* Allows you to grant users having specific roles the capability to delete their accounts on the front end.
+* Allows you to restrict content on user profiles using user roles.
+* Allows you to choose the fields that are shown on user profiles and the account page.
+* Allows you to activate or deactivate users.
+* Allows you to set Default User Status.
+* Allows you to change users' status.
+* Allows you to force users to confirm their accounts.
+* Adds password field to registration form.
+* Users can send messages to each other.
+* Users can block other users.
+* Users can upload profile photos.
+* Users can grant access to their profiles to specific set of users.
+* Shows author posts & comments on user profiles.
 * Extensible with many filters and actions.
+
+See the structure of the URLs used to locate user profiles and account page on the front end [here](https://github.com/describr/versions/blob/main/Front-END-URL-STRUCT.md). 
+
+PS: If a feature does not work properly, report it at [our support page](https://wordpress.org/support/plugin/describr/), and we will fix the issue as soon as possible.
 
 == Installation ==
 

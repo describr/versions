@@ -1,0 +1,643 @@
+=== Describr: User Profile on the Front End ===
+
+== Archived Changelog Entries ==
+
+This file contains older changelog entries. For the latest changes, please see the "Changelog" section of the [readme.txt file](https://plugins.svn.wordpress.org/describr/trunk/readme.txt).
+
+= 3.1.3 =
+*Release Date - 21 January 2026*
+
+###Changed
+
+* The user profile and account page's slugs that are translated by WPML are added to the rewrite rules. The original slugs were incorrectly added twice.
+* The About tab's default subtab changes from Tagline to Basic Info on the user profile.
+* Display name and username are only displayed in About if the current user can edit the profile, because these fields are also displayed in the profile's header.
+* Nicename is only displayed in About if the current user can edit the profile, because the nicename is the part of the profile's URL that identifies the user and is already displayed if the profile is being viewed.
+
+= 3.1.2 =
+*Release Date - 7 January 2026*
+
+###Added
+
+* A cached profile's data are cleaned before fetching client-bound data, enabling the displaying of the most up-to-date data. In previous versions, a profile's old data was sent to the client after the profile was updated.
+
+= 3.1.1 =
+*Release Date - 6 January 2026*
+
+###Changed
+
+* User's status is only shown if a user is not approved.
+* Social network's HTML on a profile is removed when a user deletes social network using Ajax.
+* The box for making a user important is only printed in the Admin profile if the current user can edit users.
+
+###Added
+
+* Linked social-media icons are display in the profile's summary, to the right of the profile picture.
+
+* Action `describr_profile_summary` to print a profile summary.
+* Action `describr_profile_summary_after_header` to print responsive profile summaries after the header.
+* Action `describr_profile_summary_responsive_fields` to print responsive profile summaries.
+* Action `describr_profile_summary_social_media_accounts` to print linked social-media icons in the profile summary.
+* Filter `describr_print_profile_summary_fields` to filter the profile summary fields.
+* Filter `describr_profile_summary_social_media_fields` to filter the social media keys for printing social media icons in the profile summary.
+* Filter `describr_profile_summary_social_media_show_first` to filter the keys for social media that should be shown first.
+* Function `describr_profile_summary` to print a profile summary.
+* Function `describr_profile_after_header` to print a responsive profile summary.
+* Function `describr_profile_after_header` to print responsive profile summaries after the header.
+* Function `describr_print_profile_summary_fields` to print responsive profile summaries.
+
+= 3.1.0 =
+*Release Date - 13 December 2025*
+
+###Changed
+
+* Replaced PHP functions `mb_trim`, `mb_ltrim`, `mb_rtrim` with `trim`, `ltrim`, and `rtrim`, respectively for compatibility with PHP < 8.4.
+* Retrieved email content type from email header if the content type is `multipart/*`.
+* Removed the loose closing parenthesis from the translatable "Persian (Afghanistan))" text.
+* Added context to the time zone translatable "Luxembourg" text.
+* Bumped "Requires at least" to 6.0.
+* Reduced "Requires PHP" to 7.0.
+* Changed Confirm Account notice.
+
+= 3.0.2 =
+*Release Date - 2 December 2025*
+
+###Changed
+
+* Cities suggested to users as they type are no longer translatable.
+* Bumped "Tested up to" to 6.9
+
+= 3.0.1 =
+*Release Date - 15 October 2025*
+
+###Changed
+
+* User is valid if no status exists.
+* Replaced single quotes with double quotes in JavaScript files.
+* Changed the name of the JavaScript property to delete the profile picture from "delete" to "deletePicture".
+* Changed the name of the JavaScript property to assign the profile picture from "assign" to "assignPicture".
+* Removed the `describr.events` method in `assets/js/main.js`.
+* Checked if the post exists when retrieving the attachment ID for a profile photo in `includes/class-avatar.php`.
+* Restored the current blog before any returning in `includes/class-upload-photo.php`.
+* Uncommented `describr_messages_keys` user meta in `includes/class-user.php` so that users can reply to messages.
+
+###Added
+
+* Front-end profile photo is audited if it is deleted by a user.
+* Function `describr_avatar_rating` to retrieve the avatar's rating.
+* Function `describr_print_profile_picture_rating_modal` to print profile picture rating modal.
+* `Popper.js` to display popups in the admin interface.
+* The ability to rate avatar on the front end.
+* Additional placeholders in email templates.
+
+
+= 3.0 =
+*Release Date - 1 October 2025*
+
+###Changed
+
+* Users can view and update their profiles on the front end.
+* The main Describr class now only addresses issues core to the plugin and now longer addresses printing data or scripts.
+* The script to upload an avatar removed. Avatars uploaded by WordPress and then assigned to the user by Describr. 
+* User meta and options added by Describr are deleted in `uninstall.php` when Describr is deleted.
+* Bumped "Requires PHP" to 8.4.0.
+* Bumped "Tested up to" to 6.8.2
+* Removed the donate link from the `readme.txt` file.
+* Files `class.describr.php`, `edit-user-profile-describr.php`, and `translations-describr.php` deleted.
+* Directories `css/`, `images/`, and `js/` deleted.
+* Describr's description updated.
+
+###Added
+
+* "Update URI" header to the plugin file for updating Describr outside of the WordPress plugins repository.
+* File `changelog.txt` to record changes.
+* Directory `assets/` to house CSS, JavaScript, and image files.
+* Directory `includes/` to house the core script files for Describr. This directory contains PHP scripts for functions (`describr-functions.php`), classes (`class-init.php`), and a directory (`cities-locale/`) containing localized states and cities (`cities-1.php`).
+* Directory `templates/` to house template files. This directory contains PHP scripts to print the profile (`profile.php`), account (`account.php`), posts (`post.php`), and comments (`comment.php`) on the front end. Also included is a directory (`email/`) containing template files (`send-user-welcome.php`) for sending emails.
+* `Roles` tab under `Settings` tab in the back end. The page that is linked contains a Roles list table. This table has three default columns: Role, Users, and Capability. Links are provided to edit, add capability, and add redirect links to roles.
+* `Describr` tab under the `Settings` tab in the back end. This page contains settings that control how Describr works. Similar settings are added on the network's Settings page in multisite.
+* Class `Account` to handle output of the account settings.
+* Class `Avatar` to handle retrieving the attachment image that is assigned as the user's avatar and resizing the avatar.
+* Class `Config` to set the fields and options required for the plugin to function.
+* Class `Date` to translate dates based on passed formats.
+* Class `Error` to handle checking for errors.
+* Class `Fields` to handle creating HTML fields.
+* Class `Form` to store data submitted.
+* Class `Locale` to store translated data for a locale.
+* Class `Login_Register` to authenticate users and output the password field in WordPress' registration form.
+* Class `Mailer` to send Describr emails and prevent emails being sent to admin after user action.
+* Class `Multisite` to handle Describr multisite settings.
+* Class `Pages` to verify the profile and account pages.
+* Class `Password` to validate registration and strong passwords.
+* Class `Permalinks` to create permalinks used by Describr to output content.
+* Class `Profile_Field_Controls` to create the HTML for the Privacy, Availability, and More Options buttons for a field.
+* Class `Profile` to handle the output of the user profile.
+* Class `Redirect` to handle redirects.
+* Class `Rewrite` to add Describr rewrite rules to the database and add Describr query variables.
+* Class `Scripts` to register scripts and styles used by Describr.
+* Class `Setup` to install Describr.
+* Class `Translation` to translate permalinks.
+* Class `Updater` to update Describr outside of WordPress.
+* Class `Upload_Photo` to assign and delete a photo (avatar).
+* Class `User` to store and update user data.
+* Class `Validation` to help validate user input.
+* Class `Admin_Users` to add Describr features to the admin Users Screen.
+* Class `Admin_Menu` to add filters and actions to specific admin screens and sanitize Describr roles' options.
+* Class `Admin_Options` to output Describr option form fields and sanitize Describr options.
+* Class `Admin_Roles_List_table` to output content on Describr's admin Roles page.
+* Class `Admin` to add Describr's metadata to items in the Pages and Plugins list tables.
+* Function `describr_can_take_profile_picture_actions` to retrieve whether the current user can edit the profile photo or upload a profile photo.
+* Function `describr_is_strong_pass` to verify a strong password.
+* Function `describr_is_user_active` to retrieve whether a user is active.
+* Function `describr_is_option` to retrieve whether a submitted value is a key or value of a defined array.
+* Function `describr_current_url` to retrieve the URL that makes the current request.
+* Function `describr_photo_id` to retrieve the ID of the attachment that is assigned as the user's avatar.
+* Function `describr_is_saved_data_empty` to retrieve whether a database query returns an empty value.
+* Function `describr_falsey_to_empty_str` to convert a value of type false or null to an empty string.
+* Function `describr_is_nicename_locked` to retrieve whether the duration for updating a nicename has expired.
+* Function `describr_nicename_locked_notice` to retrieve the notice indicating that a nicename cannot be updated.
+* Function `describr_is_social` to retrieve whether a field is a social network.
+* Function `describr_has_photo` to retrieve whether a user has a profile photo.
+* Function `describr_can_edit_user` to retrieve whether the current user can edit a user.
+* Function `describr_can_delete_user` to retrieve whether the current user can delete a user.
+* Function `describr_is_password_required` to retrieve whether a password is required for the current action.
+* Function `describr_can_edit_profile` to retrieve whether the current user can edit a user's profile.
+* Function `describr_can_upload` to retrieve whether the current user can upload a profile photo.
+* Function `describr_using_pretty_url` to retrieve whether a URL is in the pretty URL format.
+* Function `describr_floated_avatar` to retrieve an avatar that is floated to the right when displayed in the browser.
+* Function `describr_esc_textarea` to escape data that was submitted from an HTML textarea tag for displaying in an HTML nontextarea tag.
+* Function `describr_profile_id` to retrieve the ID of the user to whom a profile belongs.
+* Function `describr_display_value` to format profile fields in HTML for displaying in the browser.
+* Function `describr_field_accessible_value` to format profile fields for accessibility in the browser.
+* Function `describr_profile_url` to retrieve a profile URL.
+* Function `describr_profile_tab_url` to retrieve a profile tab URL.
+* Function `describr_is_user_viewable` to retrieve whether a user is viewable.
+* Function `describr_is_profile_viewable_` to retrieve whether a profile can be shown.
+* Function `describr_can_profile_be_indexed` to retrieve whether a profile can be indexed by search engines.
+* Function `describr_is_user_logged_in_anywhere` to retrieve whether a user has any active session.
+* Function `describr_can_view_when_logged_in` to retrieve whether the time a user last logged in can be shown.
+* Function `describr_can_view_registered` to retrieve whether a user's registered date can be shown.
+* Function `describr_time_last_login` to retrieve the time a user last logged in.
+* Function `describr_user_status` to retrieve a user's status.
+* Function `describr_user_status_indicator` to create an icon indicating the user's status.
+* Function `describr_is_user_important` to retrieve whether a user is important.
+* Function `describr_important_user_indicator` to create an icon indicating a user is verified as someone of great importance.
+* Function `describr_logged_in_indicator` to create an icon indicating a user is logged in.
+* Function `describr_enqueue_pwd_script` to enqueue the JavaScript files Describr uses to verify passwords.
+* Function `describr_check_identifier_in_pass` to check whether a password has any information that identifies the user.
+* Function `describr_is_bdate_in_password` to retrieve whether a password contains the user's birthdate.
+* Function `describr_set_user_id` to cache a user's ID.
+* Function `describr_get_user_id` to retrieve a cached user ID.
+* Function `describr_fetch_user` to set the WP_User object of the targeted user.
+* Function `describr_reset_user` to unset the WP_User object of the targeted user.
+* Function `describr_user_var` to retrieve user data associated with a specific field.
+* Function `describr_user` to retrieve user data associated with a nonspecific field.
+* Function `describr_is_self` to retrieve whether a user is the current user.
+* Function `describr_is_field_viewable` to retrieve whether a field is viewable.
+* Function `describr_is_field_editable` to retrieve whether a field can be edited.
+* Function `describr_is_field_required` to retrieve whether a field is required.
+* Function `describr_is_aside_editable` to retrieve whether a field's aside can be edited.
+* Function `describr_can_block_user` to retrieve whether the current user can block a user.
+* Function `describr_is_messaging_enabled` to retrieve whether users can send messages to each other.
+* Function `describr_can_send_message` to retrieve whether the current user can send a message to a user.
+* Function `describr_display_name` to retrieve a user's display name.
+* Function `describr_get_page_id` to retrieve the ID of a page that Describr uses to output user data on the front end.
+* Function `describr_is_page` to retrieve whether a page is one that Describr uses to output user data on the front end.
+* Function `describr_apply_placeholders` to retrieve placeholders and the data that replace the placeholders.
+* Function `describr_replace_placeholders` to replace placeholders with the data that replace the placeholders.
+* Function `describr_prefix` to prefix the passed argument with `describr_`.
+* Function `describr_admin_emails` to retrieve an array of site administrator's email addresses.
+* Function `describr_wpmu_admin_emails` to retrieve an array of the network's administrators' email addresses.
+* Function `describr_robots_noindex` to add noindex directives for the HTML "robots" meta tag.
+* Function `describr_per_page` to retrieve the number of records to retrieve from the database.
+* Function `describr_is_member` to retrieve whether a user is a valid member of the site.
+* Function `describr_get_handle_from_url` to retrieve a social network handle from a URL.
+* Function `describr_age` to convert birthdate to age.
+* Function `describr_date` to retrieve a translated date.
+* Function `describr_utc_date` to retrieve a translated date based on the UTC time zone.
+* Function `describr_timezone` to convert a time zone to a DateTimeZone object.
+* Function `describr_utc_decimal_to_minutes` to convert the decimal part of the UTC offset to minutes.
+* Function `describr_locale_date_format` to retrieve translated date formats.
+* Function `describr_get_locale_date_format_by_date` to retrieve translated date formats based on user-generated dates.
+* Function `describr_normalize_date_sep` to replace the user-generated date format separator with the favored date format separator.
+* Function `describr_normalize_date` to complete user-generated dates by adding month and day.
+* Function `describr_phone_number_type` to retrieve translated phone number type.
+* Function `describr_sanitize_input` to sanitize user data.
+* Function `describr_get_aside` to retrieve a field's aside settings.
+* Function `describr_get_saved_asides` to retrieve a field's saved asides.
+* Function `describr_large_num_initial` to retrieve the localized one-letter abbreviation for the name for a large number.
+* Function `describr_number_initial` to retrieve a rounded-down number with the accompanying translated one-letter abbreviated large number initial.
+* Function `describr_add_profile_data_trigger` to create the HTML button that triggers the display of the HTML form that is used to submit data for a field.
+* Function `describr_get_all_field_keys` to retrieve the keys for all fields.
+* Function `describr_get_field` to retrieve a field's or fields' settings.
+* Function `describr_get_fields_by_aside` to retrieve fields that are in the same aside category.
+* Function `describr_get_viewable_fields` to retrieve fields authorized by the administrator.
+* Function `describr_editable_fields` to retrieve fields whose values can be edited.
+* Function `describr_field_exists` to retrieve whether a field has been enabled by the administrator.
+* Function `describr_get_socials` to retrieve all social networks.
+* Function `describr_get_field_` to retrieve a field's setting.
+* Function `describr_profile_header_fields` to retrieve fields that are only displayed in the profile's header.
+* Function `describr_profile_field_edit_mode_html` to retrieve fields whose data are adjusted to make accessible in edit mode.
+* Function `describr_settings_options` to retrieve options for a field or for a field's aside.
+* Function `describr_auditing_fields` to put an updating field in the auditing queue.
+* Function `describr_audit_fields` to audit fields in the auditing queue.
+* Function `describr_pluck_field_status_and_priv` to queue user-generated values for fields' asides that are saved later.
+* Function `describr_update_field_status_and_priv` to save user-generated values for fields' asides that are in the asides' queue.
+* Function `describr_get_field_supports` to retrieve a field's subfields.
+* Function `describr_date_format_examples` to retrieve an array of date format examples that describes acceptable date formats for a field.
+* Function `describr_set_no_data` to queue fields that have no saved values.
+* Function `describr_primary_button` to output an form's Submit button.
+* Function `describr_secondary_button` to output an form's Cancel button.
+* Function `describr_normalize_selected_utc_offset` to prefix user-generated UTC offset with a plus or minus sign.
+* Function `describr_beautify_utc_offset` to replace a UTC offset decimal (relative to 60 seconds) with its colon-followed-by-minute equivalent.
+* Function `describr_load_locale_continents_cities` to load the continent-cities locale.
+* Function `describr_timezone_choice` to retrieve time zones as HTML options.
+* Function `describr_date_formats` to retrieve date formats for user-generated date.
+* Function `describr_date_sep` to retrieve the separator used in user-generated date.
+* Function `describr_account_status_labels` to retrieve an array of user status.
+* Function `describr_enqueue_toggle_pwd_button_styles` to enqueue styling for the button that toggles the password field.
+* Function `describr_delete_transient_once` to retrieve queue transients that are deleted during the script's execution.
+* Function `describr_special_chars_entity_numbers` to retrieve an array of characters and their entity numbers.
+* Function `describr_set_form_field` to queue form fields that are displayed in the browser.
+* Function `describr_get_form_fields` to retrieve queued form fields.
+* Function `describr_remove_form_field` to remove a queued form field.
+* Function `describr_home_url` to retrieve the home URL.
+* Function `describr_registration_url` to retrieve the registration URL.
+* Function `describr_login_url` to retrieve the login URL.
+* Function `describr_logout_url` to retrieve the logout URL.
+* Function `describr_safe_redirect` to perform a safe redirect.
+* Function `describr_location_url` to retrieve the URL for a named location on the site.
+* Function `describr_redirect_after_url` to retrieve the URL to redirect_to after an action.
+* Function `describr_redirect_after` to perform a redirect after a specific action.
+* Function `describr_maybe_js_redirect` to perform a PHP or JavaScript redirect.
+* Function `describr_notice` to output a Describr notice.
+* Function `describr_verify_char_length` to validate the number of characters in user-generated value.
+* Function `describr_unwrap_p` to unwrap the paragraph tag from around data displayed in the browser.
+* Function `describr_get_network_option` to retrieve a network's or site's option value based on the option name.
+* Function `describr_add_network_option` to add a new network or site option.
+* Function `describr_update_network_option` to update the value of a network or site option.
+* Function `describr_translated_countries` to retrieve an array of translated countries.
+* Function `describr_translated_timezone` to retrieve an array of translated time zone cities.
+* Function `describr_translated_locale` to retrieve an array of translated languages.
+* Function `describr_translated_gender` to retrieve an array of translated genders.
+* Function `describr_translated_relationship_status` to retrieve an array of translated relationship statuses.
+* Function `describr_tanslated_field_status` to retrieve an array of translated statuses for user profile fields.
+* Function `describr_translated_privacy` to retrieve an array of translated audience for user profile fields.
+* Function `describr_translated_message_privacy` to retrieve an array of translated audiences for sending messages.
+* Function `describr_comment_text` to retrieve a comment's content.
+* Function `describr_post_time` to retrieve a post's translated date.
+* Function `describr_comment_date` to retrieve a comment's translated date.
+* Function `describr_is_post_viewable` to retrieve whether a post can be shown by the current user.
+* Function `describr_comments_bubble` to retrieve the comment bubble icon.
+* Function `describr_excerpt_more` to customize the "more" link displayed after a trimmed post's content.
+* Function `describr_defined_roles` to retrieve an array of defined roles.
+* Function `describr_account_notices` to run as a callback that prints Describr notices when the `describr_account_notices` action is fired.
+* Function `describr_get_notice` to retrieve a Describr notice.
+* Function `describr_check_account_action_nonce` to validate updating the account settings.
+* Function `describr_photo_size` to retrieve the site's preferred size for the main photo on users' profiles.
+* Function `describr_a11y_text` to retrieve HTML-formatted accessibility text.
+* Function `describr_hidden_title` to retrieve the field's title made hidden from users using screen readers.
+* Function `describr_photo_key` to retrieve the usermeta key for the profile photo.
+* Function `describr_account_hidden_fields` to run as a callback that prints input tags of type hidden in forms on the front-end account settings page when the `describr_account_hidden_fields` action is fired.
+* Function `describr_submit_account_form` to run as a callback that retrieves fields and asides from `$_POST` when the `describr_submit_account_form` action is fired.
+* Function `describr_submit_account_validate` to run as a callback that validates a user's action when the `describr_submit_account_validate` action is fired.
+* Function `describr_submit_account_tab_privacy_validate` to run as a callback that validates fields in the privacy tab when the `describr_submit_account_tab_privacy_validate` action is fired.
+* Function `describr_submit_account_update` to run as a callback that updates the user's account settings when the `describr_submit_account_update` action is fired.
+* Function `describr_account_fieldset_opening_tag` to run as a callback that prints the opening fieldset tag when the `describr_account_fieldset_opening_tag` action is fired.
+* Function `describr_account_fieldset_closing_tag` to run as a callback that prints the closing fieldset tag  when the `describr_account_fieldset_closing_tag` action is fired.
+* Function `describr_account_print_scripts` to run as a callback that adds inline scripts for the account settings page when the `wp_footer` action is fired.
+* Function `describr_print_account_audit_modal` to run as a callback that prints the HTML modal for field auditing on the account settings page when the `wp_footer` action is fired.
+* Function `describr_enqueue_admin_script` to run as a callback that enqueues Describr's registered and inlined scripts and styles for the admin interface when the `admin_enqueue_scripts` action is fired.
+* Function `describr_enqueue_important_user_style` to run as a callback that enqueues style for the "Importan Person" feature when the `admin_enqueue_scripts` action is fired.
+* Function `describr_add_admin_localized_script` to run as a callback that enqueues Describr's translated strings when the `admin_footer` action is fired.
+* Function `describr_output_manage_fields_modal` to run as a callback that prints the modal from which Describr's fields are managed when the `admin_footer` action is fired.
+* Function `describr_js_namespace` to run as a callback that adds Describr's JavaScript namespace for output when the `wp_head` action is fired.
+* Function `describr_dismiss_newemail` to run as a callback that deletes the user meta for the pending email change when the `template_redirect` action is fired.
+* Function `describr_authenticate_profile_schema_ajax_request` to run as a callback that authenticates ajax requests for front-end profile schema content when the `describr_authenticate_profile_schema_ajax_request` action is fired.
+* Function `describr_profile_authenticate_field_changes` to run as a callback that authenticates requests from the front end to update a profile's field when the `describr_profile_authenticate_field_changes` action is fired.
+* Function `describr_profile_pluck_submitted_fields` to run as a callback that retrieves profile's fields' values from $_POST when the `describr_profile_pluck_submitted_fields` action is fired.
+* Function `describr_profile_delete_fields` to run as a callback that deletes a profile's field when the `describr_profile_delete_fields` action is fired.
+* Function `describr_profile_validate_edited_fields` to run as a callback that validates and sanitizes profile's fields before they are saved when the `describr_profile_validate_edited_fields` action is fired.
+* Function `describr_profile_global_screen_reader_alert` to run as a callback that prints a div tag on the front-end profile when the `describr_profile_before_header` action is fired.
+* Function `describr_profile_header` to run as a callback that prints the header of the front-end profile page when the `describr_profile_header` action is fired.
+* Function `describr_profile_actions` to run as a callback that prints actionable buttons on the front-end profile when the `describr_profile_after_header` action is fired.
+* Function `describr_profile_edit_profile` to run as a callback that prints the button used to edit the profile on the front end when the `describr_profile_action_edit-profile` action is fired.
+* Function `describr_profile_message` to run as a callback that prints the button used to send a message from the front-end profile when the `describr_profile_action_send-message` action is fired.
+* Function `describr_block_profile` to run as a callback that prints the button used to block a user from the front-end profile when the `describr_profile_action_block-profile` action is fired.
+* Function `describr_profile_menu` to run as a callback that prints the front-end profile's menu when the `describr_profile_menu` action is fired.
+* Function `describr_profile_menu_tab_content_about` to run as a callback that prints the About tab's HTML on the front-end profile when the `describr_profile_menu_tab_content_about` action is fired.
+* Function `describr_profile_menu_tab_content_posts` to run as a callback that prints the front-end profile's Posts tab's HTML when the `describr_profile_menu_tab_content_posts` action is fired.
+* Function `describr_profile_menu_tab_content_comments` to run as a callback that prints the front-end profile's Comments tab's HTML when the `describr_profile_menu_tab_content_comments` action is fired.
+* Function `describr_enqueue_profile_translated_strings_and_settings` to run as a callback that enqueues translated strings and settings for the front-end profile when the `wp_footer` action is fired.
+* Function `describr_print_translated_states_and_cities_script` to run as a callback that prints the translated states and cities for the front-end profile when the `wp_footer` action is fired.
+* Function `describr_print_profile_modals` to run as a callback that prints modals used on the front-end profile when the `wp_footer` action is fired.
+* Function `describr_print_profile_picture_modal` to run as a callback that prints the modal from which the picture on the front-end profile can be edited when the `wp_footer` action is fired.
+* Function `describr_get_field_user_login` to run as a callback that adds the HTML disabled property and a "cannot be changed" description to the field's settings when the `describr_get_field_user_login` filter is applied in the front-end account settings.
+* Function `describr_get_field_user_email` to run as a callback that adds a "email confirmation required" description to the field's settings when the `describr_get_field_user_email` filter is applied in the front-end account settings.
+* Function `describr_get_field_user_nicename` to run as a callback that adds the HTML disabled property and a "cannot be changed before" description to the field's settings when the `describr_get_field_user_nicename` filter is applied in the front-end account settings.
+* Function `describr_get_field_display_name` to run as a callback that updates the field's settings by adding an array of display names and changing the field's type to "select" when the `describr_get_field_display_name` filter is applied.
+* Function `describr_get_field_user_pass` to run as a callback that adds a password hint if a strong password is required when the `describr_get_field_user_pass` filter is applied in the front-end account settings.
+* Function `describr_account_blocked_users_content` to run as a callback that creates the HTML for the Blocked Users tab in the front-end account settings when the `describr_account_blocked_users_content` filter is applied in the front-end account settings.
+* Function `describr_account_destroy_sessions_nonce` to run as a callback that sets the nonce to destroy sessions to when the `describr_account_destroy_sessions` filter is applied in the front-end account settings.
+* Function `describr_extend_account_fields` to run as a callback that extends fields that can be shown when the `describr_viewable_field_settings` filter is applied in the front-end account settings.
+* Function `describr_is_user_viewable_filter` to run as a callback that determines if a user is viewable when the `describr_is_user_viewable` filter is applied.
+* Function `describr_get_canonical_url` to run as a callback that returns the canonical URL of front-end profile when the `get_canonical_url` filter is applied.
+* Function `describr_user_display_name` to run as a callback that wraps display name and avatar in HTML when the `describr_user_display_name` filter is applied.
+* Function `describr_add_required_to_supports` to run as a callback that makes required the main subfields for fields lived_cities, college, and high_school when the `describr_get_field_supports` filter is applied.
+* Function `describr_add_college_high_school_title_label` to run as a callback that sets the title and label for fields college and high_school's school subfield when the `describr_get_field_supports` filter is applied.
+* Function `describr_profile_current_subtab` to run as a callback that retrieves the active subtab on the front-end profile when the `describr_profile_current_subtab` filter is applied.
+* Function `describr_kses_safe_style_css` to run as a callback that sets Describr's safe property for the style attribute when the `safe_style_css` filter is applied.
+* Function `describr_is_nicename_lock_expired_filter` to run as a callback that retrieves whether a nicename can be updated when the `describr_is_nicename_lock_expired` filter is applied.
+* Function `describr_is_field_viewable_filter` to run as a callback that retrieves whether a field is viewable when the `describr_is_field_viewable` filter is applied.
+* Function `describr_profile_add_social_fields_to_contact_social_tabs` to run as a callback that social network fields to the `Contact and Social` tab on the front-end profile when the `describr_profile_about_schema` filter is applied.
+* Function `describr_profile_no_data_available_message` to run as a callback that retrieves the "no data available" notice for tabs on the front-end profile when the `describr_profile_no_data_available_message` filter is applied.
+* Function `describr_maybe_add_action_buttons_indicator_class` to run as a callback that adds the `action-buttons-exist` class to the tag that wraps user meta in the header of the front-end profile when the `describr_profile_summary_class` filter is applied.
+* Function `describr_print_field_admin_modal_template` to print a field's audit in the browser.
+* Function `describr_get_blog_locale` to retrieve the blog's locale.
+* Function `describr_cancel_pending_email_change_notice` to retrieve the notice containing the link to cancel the pending change of the user's email.
+* Function `describr_add_fields_supports` to run as a callback that sets subfields' settings for editable fields when the `describr_profile_get_edit_fields` filter is applied.
+* Function `describr_profile_edit_add_username` to run as a callback that adds settings for the user's login to the array of editable fields when the `describr_profile_get_edit_fields` filter is applied.
+* Function `describr_profile_edit_field_remove_caps` to run as a callback that removes the capability key from editable fields' settings array when the `describr_profile_get_edit_fields` filter is applied.
+* Function `describr_profile_edit_field_remove_asides` to run as a callback that removes asides setting from the editable fields' settings array when the `describr_profile_get_edit_fields` filter is applied.
+* Function `describr_profile_validate_editable_picture` to run as a callback that adds the validated profile photo field to the editable fields' settings array when the `describr_profile_get_edit_fields` filter is applied.
+* Function `describr_profile_edit_nicename_description` to run as a callback that adds the description to the `user_nicename` user meta settings array when the `describr_profile_get_edit_field_user_nicename` filter is applied.
+* Function `describr_profile_edit_description_description` to run as a callback that adds the description to the `description` user meta settings array when the `describr_profile_get_edit_field_description` filter is applied.
+* Function `describr_profile_edit_confirm_email_notice` to run as a callback that adds an "email confirmation required" description to the `user_email` user meta settings array when the `describr_profile_get_edit_field_user_email` filter is applied.
+* Function `describr_profile_edit_timezone_description` to run as a callback that adds a description to the `timezone` user meta settings array when the `describr_profile_get_edit_field_timezone` filter is applied.
+* Function `describr_college_description` to run as a callback that adds text that describes the `college` field's `description` subfield to the `description` subfield settings when the `describr_profile_get_edit_field_college_support_description` filter is applied.
+* Function `describr_high_school_description` to run as a callback that adds text that describes the `high school` field's `description` subfield to the `description` subfield settings when the` describr_profile_get_edit_field_high_school_support_description` filter is applied.
+* Function `describr_profile_edit_fields_saved_asides` to run as a callback that retrieves the editable fields' saved asides when the `describr_profile_edit_fields_saved_asides` filter is applied.
+* Function `describr_wp_safe_redirect_fallback` to run as a callback that sets the admin URL as the fallback URL for safe redirects if the current user has a high level of permission when the `describr_wp_safe_redirect_fallback` filter is applied.
+* Function `describr_profile_field_url` to run as a callback that creates hyperlinks from URLs, except for URLs whose user meta key is `user_url`, when the `` filter is applied in the front-end profile.
+* Function `describr_profile_field_user_url` to run as a callback that creates a hyperlink from user meta `user_url` URL when the `describr_profile_field_user_url` filter is applied in the front-end profile.
+* Function `describr_profile_field_user_email` to run as a callback that formats the user's email using HTML when the `describr_profile_field_user_email` filter is applied in the front-end profile.
+* Function `describr_profile_field_tagline` to run as a callback that formats the user's tagline when the `describr_profile_field_tagline` filter is applied in the front-end profile.
+* Function `describr_profile_field_timezone` to run as a callback that formats the user's time zone using HTML when the `describr_profile_field_timezone` filter is applied in the front-end profile.
+* Function `describr_profile_field_age` to run as a callback that formats the user's age using HTML when the `describr_profile_field_birthdate` filter is applied in the front-end profile.
+* Function `describr_profile_field_user_nicename` to run as a callback that formats the user's nicename using HTML when the `describr_profile_field_user_nicename` filter is applied in the front-end profile.
+* Function `describr_profile_field` to run as a callback that formats general user meta values using HTML when the `describr_profile_field` filter is applied in the front-end profile.
+* Function `describr_profile_options_field` to run as a callback that formats user meta values that are selected from a list of options using HTML when the `describr_profile_field` filter is applied in the front-end profile.
+* Function `describr_profile_field_description` to run as a callback that formats the user's biography user meta value using HTML when the `describr_profile_field_description` filter is applied in the front-end profile.
+* Function `describr_profile_field_relationship` to run as a callback that formats the user's relationship using HTML when the `describr_profile_field_relationship` filter is applied in the front-end profile.
+* Function `describr_profile_field_lived_cities` to run as a callback that formats cities in which the user has lived using HTML when the `` filter is applied in the front-end profile.
+* Function `describr_profile_field_work_history` to run as a callback that formats the user's work history using HTML when the `describr_profile_field_work_history` filter is applied in the front-end profile.
+* Function `describr_profile_field_schools` to run as a callback that formats the user's colleges and high schools using HTML when the `describr_profile_field` filter is applied in the front-end profile.
+* Function `describr_profile_field_socials` to run as a callback that formats the user's social networks that are non-URLs using HTML when the `describr_profile_field` filter is applied in the front-end profile.
+* Function `describr_profile_field_accessible_birthdate` to run as a callback that makes the user's birthdate accessible when the `describr_profile_field_accessible_birthdate` filter is applied.
+* Function `describr_profile_field_accessible` to run as a callback that makes accessible the user's mobile number, work number, home number, and time zone when the `describr_profile_field_accessible` filter is applied.
+* Function `describr_profile_field_accessible_options_field` to run as a callback that makes accessible user meta values that are selected from a list of options when the `describr_profile_field_accessible` filter is applied.
+* Function `describr_profile_field_accessible_relationship` to run as a callback that makes the user's relationship accessible when the `describr_profile_field_accessible_relationship` filter is applied.
+* Function `describr_profile_field_accessible_schools` to run as a callback that makes the user's colleges and high schools accessible when the `describr_profile_field_accessible` filter is applied.
+* Function `describr_profile_field_accessible_work_history` to run as a callback that makes the user's work history accessible when the `describr_profile_field_accessible_work_history` filter is applied.
+* Function `describr_profile_field_accessible_lived_cities` to run as a callback that makes accessible cities where the user has lived when the `describr_profile_field_accessible_lived_cities` filter is applied.
+* Function `describr_profile_field_accessible_description_excerpt` to run as a callback that trims words in the user's biography when the `describr_profile_field_accessible_description` filter is applied.
+* Function `describr_determine_user_logged_in` to run as a callback that checks whether the logged-in status of a user can be shown when the `describr_determine_user_logged_in` filter is applied.
+* Function `describr_can_view_when_logged_in_filter` to run as a callback that checks whether when a user last logged in can be shown when the `describr_can_view_when_logged_in` filter is applied.
+* Function `describr_can_view_registered_filter` to run as a callback that checks whether when a user registered can be shown when the `describr_can_view_registered` filter is applied.
+* Function `describr_is_field_viewable_filter` to run as a callback that checks if a field can be shown when the `describr_is_field_viewable` filter is applied.
+* Function `describr_can_user_send_message_filter` to run as a callback that checks whether the current user can send a message to a user when the `describr_can_user_send_message` filter is applied.
+* Function `describr_user_status_indicator_filter` to run as a callback that returns the user's status indicator when the `describr_user_status_indicator` filter is applied.
+* Function `describr_important_user_indicator_filter` to run as a callback that returns the indicator for an important user when the `describr_important_user_indicator` filter is applied.
+* Function `describr_logged_in_indicator_filter` to run as a callback that returns the indicator for a user who is logged in when the `describr_logged_in_indicator` filter is applied.
+* Filter `describr_is_non-member_viewable` to allow the changing of whether a nonmember of the site is viewable.
+* Filter `describr_enable_canonical_url` to allow the changing of the front-end profile's canonical URL.
+* Filter `describr_profile_picture_edit_icon` to allow the changing of the HTML classes of the icon used to edit the profile picture on the front-end profile.
+* Filter `describr_profile_summary_class` to allow the changing of the class of the HTML div that wraps the user meta in the header of the front-end profile.
+* Filter `describr_profile_indicators` to allow the changing of the indicators on the front-end profile.
+* Filter `describr_profile_username` to allow the changing of the username on the front-end profile.
+* Filter `describr_profile_url__` to allow the changing of the URL of the front-end profile.
+* Filter `describr_edit_profile_url` to allow the changing of the URL to edit the front-end profile.
+* Filter `describr_profile_tab_url_{$tab}` to allow the changing of the URL for the tab in the main menu on the front-end profile.
+* Filter `describr_profile_tab_url_{$tab}_attrs` to add additional HTML attributes to a tab in the main menu on the front-end profile.
+* Filter `describr_profile_current_subtab` to allow the changing of the active subtab on the front-end profile.
+* Filter `describr_profile_tab_{$tab}_default_subtab` to allow the changing of a tab's default subtab on the front-end profile.
+* Filter `describr_profile_{$tab}_subtab_url_{$subtab}` to allow the changing of the URL of a subtab on the front-end profile.
+* Filter `describr_profile_{$tab}_subtab_url_{$subtab}_attrs` to add additional HTML attributes to a subtab on the front-end profile.
+* Filter `describr_profile_paging_tabs` to allow the changing of the paging tabs on the front-end profile.
+* Filter `describr_profile_paging_tabs_rewrite_base` to allow the changing of the paging tabs' rewrite bases on the front-end profile.
+* Filter `describr_profile_get_edit_fields` to allow the changing of the fields that can be edited on the front-end profile.
+* Filter `describr_profile_get_edit_field_{$field}` to manage the field that can be edited on the front-end profile.
+* Filter `describr_profile_get_edit_field_support_{$support}` to manage a general subfield that can be edited on the front-end profile.
+* Filter `describr_profile_get_edit_field_{$field}_support_{$support}` to manage a field's subfield that can be edited on the front-end profile.
+* Filter `describr_profile_edit_fields_saved_asides` to allow the addition of user meta values for fields' asides that can be edited on the front-end profile.
+* Filter `describr_profile_strings` to allow the changing of the translated strings used when editing the front-end profile using JavaScript.
+* Filter `describr_profile_settings` to allow the changing of the settings used when editing the front-end profile using JavaScript.
+* Filter `describr_profile_message_allow_spellcheck` to allow the changing of whether spellcheck should be used when sending messages from the front-end profile.
+* Filter `describr_profile_message_allow_autocomplete` to allow the changing of whether autocomplete should be used when sending messages from the front-end profile.
+* Filter `describr_admin_strings` to allow the changing of the translated strings used when displaying Describr's features in the admin interface using JavaScript.
+* Filter `describr_account_updated_notices` to allow the changing of Describr's notices displayed on the front-end account page.
+* Filter `describr_account_asides_update` to allow the changing of fields' asides before they are saved from the front-end account page.
+* Filter `describr_role_row_actions` to allow the changing of the action links displayed under each role in the Roles list table.
+* Filter `describr_manage_roles_custom_column` to allow the addition of custom columns in the Roles list table.
+* Filter `describr_allow_account_confirmation` to allow the changing of whether to add a `Send account confirmation` link in the Users list table.
+* Filter `describr_account_tabs` to allow the changing of the tabs for the account on the front end.
+* Filter `describr_account_shortcode_can_view_content` to allow the changing of whether the user can view the shortcode content for the account on the front end.
+* Filter `describr_account_shortcode_disable_singleton` to allow the changing of whether to print the shortcode's content for the account more than once on the front end.
+* Filter `describr_account_custom_tab_classes` to allow the changing of the class of the tag for the custom account wrapper on the front end.
+* Filter `describr_account_current_tab` to allow the changing of the current tab for the account on the front end.
+* Filter `describr_account_{$tab}_fields` to allow the changing of the fields that should be printed in a tab in the account on the front end.
+* Filter `describr_account_{$tab}_content` to allow the changing of the tab's content for the account on the front end.
+* Filter `describr_account_destroy_sessions` to allow the changing of the button used to destroy sessions in the account on the front end.
+* Filter `describr_account_delete_confirm_deletion` to allow the changing of the output of the user who will be deleted in the account on the front end.
+* Filter `describr_account_{$tab}_action_require_password` to allow the changing of whether a password is required to update the account on the front end.
+* Filter `describr_email_html_main_table_attrs` to allow the changing of the attributes for the main table in HTML emails.
+* Filter `describr_remove_edit_attachment_link_frontend` to allow the changing of whether the link to edit the avatar should be shown to users on the profile on the front end if they have low permission.
+* Filter `describr_caps` to allow the changing of Describr's capabilities.
+* Filter `describr_account_tabs_settings` to allow the changing of the account's tab settings on the front end.
+* Filter `describr_social_fields` to allow the changing of social network fields.
+* Filter `describr_field_supports` to allow the changing of subfields.
+* Filter `describr_default_fields` to allow the changing of fields.
+* Filter `describr_get_field_supports` to allow the changing of the subfields for a field.
+* Filter `describr_config_data` to allow the changing of configuration data.
+* Filter `describr_fields_blacklist` to allow the changing of blacklisted fields.
+* Filter `describr_template_classes` to allow the changing of classes for templates.
+* Filter `describr_date_format_separator` to allow the changing of the date format separator for user-generated dates.
+* Filter `describr_get_field_{$type}` to allow a field's settings to be changed by the type of field.
+* Filter `describr_get_field_{$field}` to allow a field's settings to be changed by the name of the field.
+* Filter `describr_edit_field_checkbox_single_value` to allow the changing of the value for single checkbox tags.
+* Filter `describr_edit_field` to allow the changing of a field's data printed in a form tag.
+* Filter `describr_edit_field_{$mode}` to allow the changing of a field's data printed in a form tag by mode.
+* Filter `describr_edit_field_{$type}` to allow the changing of a field's data printed in a form tag by the type of tag.
+* Filter `describr_edit_field_{$field}_output` to allow the changing of a field's data printed in a form tag if a mode is set.
+* Filter `describr_form_fields` to allow the changing of the fields printed in forms.
+* Filter `describr_edit_field_{$field}_value` to allow the changing of a field's saved value for editing by the field.
+* Filter `describr_edit_field_{$type}_value` to allow the changing of a field's saved value for editing by the type of tag.
+* Filter `describr_field_{$field}_value` to allow the changing of a field's saved value by field.
+* Filter `describr_field_{$type}_value` to allow the changing of a field's saved value by the type of tag.
+* Filter `describr_field_default_value` to allow the changing of a field's default value for editing.
+* Filter `describr_field_{$field}_default_value` to allow the changing of a field's default value for editing by field.
+* Filter `describr_field_{$type}_default_value` to allow the changing of a field's default value for editing by the type of tag.
+* Filter `describr_field_value` to allow the changing of a field's value for printing in a form.
+* Filter `describr_field_wrapper_attrs` to allow the changing of attributes of the tag that wraps the tag used to edit the field's value.
+* Filter `describr_field_classes` to allow the changing of classes of the tag used to edit the field's value.
+* Filter `describr_edit_field_error` to allow the changing of the field's errors for printing.
+* Filter `describr_edit_field_label_{$field}` to allow the changing of a field's label by field.
+* Filter `describr_edit_field_label` to allow the changing of the HTML of a field's label.
+* Filter `describr_edit_field_description_{$field}` to allow the changing of a field's description by field.
+* Filter `describr_edit_field_description` to allow the changing of the HTML of a field's description.
+* Filter `describr_disallowed_functions` to allow the changing of the disallowed functions.
+* Filter `describr_edit_field_{$key}_options` to allow the changing of a field's or aside's options for editing by field or aside.
+* Filter `describr_edit_field_options` to allow the changing of a field's or aside's options for editing.
+* Filter `describr_edit_field_hidden_value` to allow the changing of the value of a field that is printed in a hidden tag.
+* Filter `describr_edit_field_aside_{$aside}` to allow the changing of the HTML of a field's aside for editing by aside.
+* Filter `describr_edit_field_aside` to allow the changing of the HTML of a field's aside for editing.
+* Filter `describr_edit_field_{$field}_aside_value` to allow the changing of saved aside value by field for editing.
+* Filter `describr_edit_field_aside_{$meta_key}_value` to allow the changing of saved aside value by usermeta key for editing.
+* Filter `describr_field_{$field}_aside_value` to allow the changing of saved aside value by field.
+* Filter `describr_field_aside_{$meta_key}_value` to allow the changing of a saved aside value by usermeta key.
+* Filter `describr_field_aside_default_value` to allow the changing of the default value of an aside of a field.
+* Filter `describr_field_{$field}_aside_default_value` to allow the changing of the default value of an aside by field.
+* Filter `describr_field_aside_{$meta_key}_default_value` to allow the changing of a saved aside value by usermeta key.
+* Filter `describr_field_aside_value` to allow the changing of a saved aside value.
+* Filter `describr_confirmation_expiration` to allow the changing of the expiration time for users to confirm their accounts.
+* Filter `describr_confirm_account_key_expired` to allow the changing of the returned value of an attempt to confirm an account, but an old-style key or an expired key is used.
+* Filter `describr_authenticate_user_errors` to allow the changing of error messages when logging in.
+* Filter `describr_email_html_document_declaration` to allow the changing of the Document Type Declaration for Describr's HTML emails.
+* Filter `describr_email_html_tag` to allow the changing of the html tag in HTML emails.
+* Filter `describr_email_charset_meta_tag` to allow the changing of the charset meta tag in HTML emails.
+* Filter `describr_email_html_body_attrs` to allow the changing of the attributes of the body tag in HTML emails.
+* Filter `describr_email_message` to allow the changing of the content of emails sent by Describr.
+* Filter `describr_email_link_style` to allow the changing of the styling for hyperlinks in HTML emails.
+* Filter `describr_email_unsubscribe_from_emails` to allow the changing of the part of the content of emails that handles unsubscribing from receiving email notifications.
+* Filter `describr_email_main_html_table_attrs` to allow the changing of the attributes of the main table tag in HTML emails.
+* Filter `describr_email_footer_sent-to_message` to allow the changing of the part of the content of emails that handles printing the email address of the email recipient.
+* Filter `describr_password_hint` to allow the changing of the site's password complexity policy.
+* Filter `describr_current_url` to allow the changing of the URL used to make the current request.
+* Filter `describr_locale_profile_url` to allow the changing of whether to use the translated URL for a profile on the front end.
+* Filter `describr_profile_page_url` to allow the changing of the URL for a profile on the front end.
+* Filter `describr_locale_account_url` to allow the changing of whether to use the translated URL for an account on the front end.
+* Filter `describr_account_page_url` to allow the changing of the URL for an account on the front end.
+* Filter `describr_unsubscribe_url` to allow the changing of the URL to unsubscribe from receiving email notifications.
+* Filter `describr_confirmation_url` to allow the changing of the URL to confirm an account.
+* Filter `describr_profile_field_aside` to allow the changing of a field's saved asides' values for displaying on the profile on the front end.
+* Filter `describr_profile_field_aside_{$aside}` to allow the changing of the asides for fields saved values by aside for displaying on the profile on the front end.
+* Filter `describr_user_can_upload_profile_photo` to allow the changing of whether the current user can upload photos.
+* Filter `describr_rewrite_rules` to allow the changing of Describr's rewrite rules.
+* Filter `describr_x_redirect_by` to allow the changing of the site's name as the `X-Redirect-By` header.
+* Filter `describr_allowed_redirect_hosts` to allow the changing of the site's allowed redirect hosts on the front end.
+* Filter `describr_wp_safe_redirect_fallback` to allow the changing of the fallback URL for safe redirects on the front end.
+* Filter `describr_redirect_to_location` to allow the changing of the location of a Describr's redirect on the front end.
+* Filter `describr_location_{$location}_url` to allow the changing of the URL of a Describr's redirect.
+* Filter `describr_profile_open_graph_image_size` to allow the changing of the size for user's image for the Open Graph Protocol.
+* Filter `describr_use_jquery_ui` to allow the changing of whether to use the jQuery UI when editing the profile on the front end.
+* Filter `describr_profile_menu_tab_is_viewable` to allow the changing of whether a tab can be shown on the profile on the front end.
+* Filter `describr_profile_allowed_tabs` to allow the changing of the number of tabs on the profile on the front end.
+* Filter `describr_profile_current_tab` to allow the changing of the active tab on the profile on the front end.
+* Filter `describr_fetched_profile_shortcode_content` to allow the changing of the content returned by the shortcode on the profile on the front end.
+* Filter `describr_profile_class` to allow the changing of the classes for the main wrapper tag on the profile on the front end.
+* Filter `describr_edit_profile_after_validated` to allow the changing of the request to update the profile on the front end after the request is validated.
+* Filter `describr_profile_asides_before_update` to allow the changing of the values of asides for a field before they are saved on the profile on the front end.
+* Filter `describr_profile_fields_after_html` to allow the changing of the HTML for the fields on the profile on the front end.
+* Filter `describr_profile_tab_output` to allow the changing of the HTML output for a tab on the profile on the front end.
+* Filter `describr_profile_posts_query_results` to allow the changing of results from a query of the database for a user's posts on the profile on the front end.
+* Filter `describr_user_timezone_for_post_time` to allow the changing of whether to use the current user's time zone to display posts' dates on the profile on the front end.
+* Filter `describr_profile_comments_query_results` to allow the changing of results from a query of the database for a user's comments on the profile on the front end.
+* Filter `describr_link_pages_link` to allow the changing of the paging hyperlinks on the front end.
+* Filter `describr_show_admin_bar_front` to override Describr's `view_admin_bar_front` capability.
+* Filter `describr_make_self_important` to allow the changing of whether users can make themselves important on the profile on the back end.
+* Filter `describr_deleted_user_notify_admin` to override sending email notification to admin when a user is deleted on the front end.
+* Filter `describr_deleted_user_notify_user` to override sending email notification to a user when a user is deleted on the front end.
+* Filter `describr_new_user_notify_moderator` to override sending email notification to admin when a new user is pending on the front end.
+* Filter `describr_approved_user_notify_user` to override sending email notification to an approved user.
+* Filter `describr_confirm_user_notify_user` to override sending email notification to a confirmed user.
+* Filter `describr_pending_user_notify_user` to override sending email notification to a pending user.
+* Filter `describr_rejected_user_notify_user` to override sending email notification to a rejected user.
+* Filter `describr_inactive_user_notify_user` to override sending email notification to an inactive user.
+* Filter `describr_active_user_notify_user` to override sending email notification to an active user.
+* Filter `describr_send_confirm_email_change_email` to allow the changing of whether to send a user an email to confirm a change of email address on the front end.
+* Filter `describr_profile_email_filter` to allow the changing of the email sent from the profile on the front end.
+* Filter `describr_time_must_elapse_before_nicename_can_change` to allow the changing of whether time must elapse before nicename can be changed on the front end.
+* Filter `describr_nicename_expiration` to allow the changing of the time that must elapse before nicename can be changed on the front end.
+* Filter `describr_is_nicename_lock_expired` to allow the changing of whether the time has elapsed before a nicename can change on the front end.
+* Filter `describr_profile_field` to allow the HTML-formatting of a field saved value for displaying on the profile on the front end.
+* Filter `describr_profile_field_{$field}` to allow the HTML-formatting of a specific field's saved value for displaying on the profile on the front end.
+* Filter `describr_profile_field_{$type}` to allow the HTML-formatting of saved value by type of field for displaying on the profile on the front end.
+* Filter `describr_profile_field_accessible` to allow the changing of fields' saved value made accessible for displaying on the profile on the front end.
+* Filter `describr_profile_field_accessible_{$field}` to allow the changing of a specific field's saved value made accessible for displaying on the profile on the front end.
+* Filter `describr_profile_field_accessible_{$type}` to allow the changing of saved value made accessible by type of field for displaying on the profile on the front end.
+* Filter `describr_is_user_viewable` to allow the changing of whether a user is viewable on the front end.
+* Filter `describr_determine_user_logged_in` to allow the changing of whether to determine if a user is logged in.
+* Filter `describr_can_view_when_logged_in` to allow the changing of whether the time a user last logged in can be shown on the front end.
+* Filter `describr_can_view_registered` to allow the changing of whether when a user registered can be shown on the front end.
+* Filter `describr_can_view_user_status` to allow the changing of whether a user's status can be shown on the front end.
+* Filter `describr_user_status_indicator` to allow the changing of a user's status indicator.
+* Filter `describr_important_user_indicator` to allow the changing of the indicator for an important user.
+* Filter `describr_user_{$key}_value` to allow the changing of the saved value for a user meta key.
+* Filter `describr_user_{$key}` to allow the changing of user data.
+* Filter `describr_viewable_field_settings` to allow the changing of the settings for a viewable field.
+* Filter `describr_is_field_viewable` to allow the changing of whether a field is viewable on the front end.
+* Filter `describr_can_user_send_message` to allow the changing of whether a user can send a message to another user.
+* Filter `describr_placeholders` to allow the changing of placeholders.
+* Filter `describr_per_page` to allow the changing of the number of results shown for a paging request.
+* Filter `describr_logged_in_indicator` to allow the changing of the indicator for a user who is logged into the site.
+* Filter `describr_user_date_formats` to allow the changing of date formats for user-generated dates.
+* Filter `describr_home_url` to allow the changing of the home URL.
+* Filter `describr_registration_url` to allow the changing of the registration URL.
+* Filter `describr_login_url` to allow the changing of the login URL.
+* Filter `describr_logout_url` to allow the changing of the logout URL.
+* Filter `describr_redirect_to_after_{$action}_url` to allow the changing of the URL to redirect to after a specific action.
+* Filter `describr_notice_args` to allow the changing of the data for a Describr's notice.
+* Filter `describr_notice_markup` to allow the changing of the HTML for a Describr's notice.
+* Filter `describr_trim_comment` to allow the changing of whether to trim a comment on the profile on the front end.
+* Filter `describr_comment_excerpt_more` to allow the changing of the `Read more` link shown after a trimmed comment on the profile on the front end.
+* Filter `describr_comment_excerpt_length` to allow the changing of the maximum number of words for a comment's excerpt on the profile on the front end.
+* Filter `describr_comment_text` to allow the changing of a comment on the profile on the front end.
+* Filter `describr_is_post_viewable` to allow the changing of whether a post can be shown on the profile on the front end.
+* Action `describr_profile_before_saved_usermeta` to fire before the saving of user meta from the front-end profile.
+* Action `describr_profile_action_edit-profile` to print the button for editing the front-end profile.
+* Action `describr_profile_action_send-message` to print the button for sending messages from the front-end profile.
+* Action `describr_profile_action_block-profile` to allow the output of a button to block the user of the front-end profile.
+* Action `describr_before_profile_menu` to fire before the output of the menu on the front-end profile.
+* Action `describr_before_profile_menu_tabs` to fire before the output of the menu's tabs on the front-end profile.
+* Action `describr_after_profile_menu_tabs` to fire after the output menu's tabs on the front-end profile.
+* Action `describr_after_profile_menu` to fire after the output of the menu on the front-end profile.
+* Action `describr_account_updated_notice_custom` to fire in the front-end account page in the case of a custom notice.
+* Action `describr_submit_account_tab_{$tab}_validate` to validate a user's account settings in a specific tab before they are updated from the front end.
+* Action `describr_account_before_update` to fire before a user's account is updated from the front end.
+* Action `describr_account_after_update` to fire after a user's account is updated from the front end.
+* Action `describr_manage_roles_extra_tablenav` to fire immediately following the closing "actions" div in the tablenav for the Roles list table.
+* Action `describr_profile_before_header` to print data or scripts before the header of the profile on the front end.
+* Action `describr_profile_header` to print the header of the profile on the front end.
+* Action `describr_profile_after_header` to print data or scripts after the header of the profile on the front end.
+* Action `describr_profile_menu` to print the menu of the profile on the front end.
+* Action `describr_profile_menu_tab_content` to print data or scripts for tabs in the main tag of the profile on the front end.
+* Action `describr_profile_menu_tab_content_{$tab}` to print data or scripts for the tab in the main tag of the profile on the front end.
+* Action `describr_submit_account_form` to retrieve data submitted to update the account on the front end.
+* Action `describr_submit_account_validate` to validate data submitted to update the account on the front end.
+* Action `describr_submit_account_update` to update the account on the front end.
+* Action `describr_account_notices` to print notices for the account on the front end.
+* Action `describr_account_hidden_fields` to print hidden tags in the form tag in the account on the front end.
+* Action `describr_before_{$atts['mode']}_shortcode` to print data or scripts before the shortcode data is printed on the front end.
+* Action `describr_before_form_is_loaded` to print data or scripts before the shortcode form tag is printed on the front end.
+* Action `describr_account_fieldset_opening_tag` to print the opening fieldset tag in the form in the account on the front end.
+* Action `describr_before_account_{$tab}_content` to print data or scripts before data for an account tab is printed on the front end.
+* Action `describr_after_account_{$tab}_content` to print data or scripts after data for an account tab is printed on the front end.
+* Action `describr_after_account_{$tab}_submit_button` to print data or scripts after the submit button is printed in the form in the account on the front end.
+* Action `describr_account_fieldset_closing_tag` to print the closing fieldset tag in the form in the account on the front end.
+* Action `describr_pre_default_fields_init` to fire before fields are initialized.
+* Action `describr_before_load_template` to fire before templates are loaded on the front end.
+* Action `describr_after_load_template` to fire after templates are loaded on the front end.
+* Action `describr_email_before_load_template` to fire before email templates are loaded.
+* Action `describr_email_after_load_template` to fire after email templates are loaded.
+* Action `describr_profile_authenticate_field_changes` to authenticate the request to update the fields on the profile on the front end.
+* Action `describr_profile_pluck_submitted_fields` to retrieve field's data sent to the script from the profile on the front end.
+* Action `describr_profile_validate_edited_fields` to validate fields' data sent to the script from the profile on the front end.
+* Action `describr_profile_delete_fields` to delete fields for the profile on the front end.
+* Action `describr_authenticate_profile_schema_ajax_request` to authenticate request made to the script for data to create the profile on the front end.
+* Action `describr_confirm_email_change_email` to fire before the email to confirm a change of email address is sent to a user on the front end.
+* Action `describr_profile_email` to fire before an email is sent by a user from the profile on the front end.
+* Action `describr_notice` to fire before the printing of a Describr's notice on the front end.
+* Action `describr_check_account_action_nonce` to fire during the checking of a user's intent in the account on the front end.
+
+= 2.0.0 =
+
+* Add `uninstall.php` file to uninstall the plugin and remove `plugin_deactivation` method from class `DESCRIBR` previously used to uninstall the plugin
+
+= 1.1.0 =
+* Add subtext to the plugin's name.
+* Change the plugin's description.
+* Remove translatable notice if `/wp-content/plugins/describr/describr.php` is accessed directly because, in this case, WordPress functions would not exist, resulting in a fatal error. Now the script is terminated by `exit;`.
+* Relocate cities from a JavaScript file to a JSON file, as the containing data is large, causing an error when WordPress attempts to parse the JavaScript file during the creation of the .pot file. The JSON file is not parsed.
+
+= 1.0.0 =
+* Initial release.
